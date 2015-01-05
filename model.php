@@ -6,7 +6,7 @@ include 'mysql.php';
 $sql = "SELECT users.user_name, entries.comment, entries.rating, entries.date, locations.location\n"
     . "FROM entries\n"
     . "INNER JOIN users\n"
-    . "	ON entries.user_id=users.id\n"
+    . "	ON entries.user_id=users.user_id\n"
     . "INNER JOIN locations\n"
     . "	ON entries.location_id=locations.id"
     . " ORDER BY date DESC";

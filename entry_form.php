@@ -23,7 +23,7 @@ $comment = $_POST['comment'];
 
 //Send data into db.
 //$sql = "INSERT INTO entries (location_id, rating, comment, 'date' ) VALUES ('$location', '$rating', '$comment', '$date')";
-$sql = "INSERT INTO entries (location_id, rating, comment, user_id) VALUES ('$location', '$rating', '$comment', '2')";
+$sql = "INSERT INTO entries (location_id, rating, comment, user_id) VALUES ('$location', '$rating', '$comment', '1')";
 //					- db -  table  -           - data  -
 
 //Check if valid statement.
