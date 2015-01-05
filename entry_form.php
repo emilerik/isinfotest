@@ -22,7 +22,7 @@ $user_id = 1;
 // $user_id = $_SESSION['user_id'];
 //$date = $_POST['date'];
 
-// xdebug_var_dump($_SESSION['user_name']);
+xdebug_var_dump($_SESSION);
 
 //Send data into db.
 //$sql = "INSERT INTO entries (location_id, rating, comment, 'date' ) VALUES ('$location', '$rating', '$comment', '$date')";
