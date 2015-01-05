@@ -19,6 +19,7 @@
   include 'php-login-minimal/index.php';
   ?>
 
+  <!-- Huvudmeny inkl registrera och logga in -->
 <!-- <div class="ui large menu">
   <a class="active item">
     <i class="home icon"></i> Home
@@ -37,33 +38,37 @@
 
 <form method="get" action="php-login-minimal/index.php">
   <button type="submit">login page</button>
+</form><br>
 
-</form>
-<br>
-<table class="ui celled table">
-  <thead >
-    <tr>
-      <th class="center aligned">Plats</th>
-      <th class="center aligned">Betyg</th> 
-      <th class="center aligned">Kommentar</th>
-      <th class="center aligned">Användare</th>
-      <th class="center aligned">Datum</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-    foreach ($posts as $post) {
-      echo "<tr>"
-      . "<td class='center aligned'>".$post['location']."</td>"
-      . "<td class='center aligned'>".$post['rating']."</td>"
-      . "<td class='center aligned'>".$post['comment']."</td>"
-      . "<td class='center aligned'>".$post['user_name']."</td>"
-      . "<td class='center aligned'>".$post['date']."</td>"
-      . "</tr>";
-    }
-    ?>
-  </tbody>
-</table>
+<div class="ui two column centered grid"> <!--Gives a container to the entries table-->
+  <div class="column">
+    <table class="ui celled table">
+      <thead >
+        <tr>
+          <th class="center aligned">Plats</th>
+          <th class="center aligned">Betyg</th> 
+          <th class="center aligned">Kommentar</th>
+          <th class="center aligned">Användare</th>
+          <th class="center aligned">Datum</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($posts as $post) {
+          echo "<tr>"
+          . "<td class='center aligned'>".$post['location']."</td>"
+          . "<td class='center aligned'>".$post['rating']."</td>"
+          . "<td class='center aligned'>".$post['comment']."</td>"
+          . "<td class='center aligned'>".$post['user_name']."</td>"
+          . "<td class='center aligned'>".$post['date']."</td>"
+          . "</tr>";
+        }
+        ?>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <?php
   //xdebug_var_dump($_SESSION);
 ?>
