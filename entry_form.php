@@ -18,18 +18,23 @@ if ($conn->connect_error) {
 $location = $_POST['location'];
 $rating = $_POST['rating'];
 $comment = $_POST['comment'];
+$user_id = 1;
+// $user_id = $_SESSION['user_id'];
 //$date = $_POST['date'];
 
+// xdebug_var_dump($_SESSION['user_name']);
 
 //Send data into db.
 //$sql = "INSERT INTO entries (location_id, rating, comment, 'date' ) VALUES ('$location', '$rating', '$comment', '$date')";
-$sql = "INSERT INTO entries (location_id, rating, comment, user_id) VALUES ('$location', '$rating', '$comment', '1')";
-//					- db -  table  -           - data  -
+$sql = "INSERT INTO entries (location_id, rating, comment, user_id) VALUES ('$location', '$rating', '$comment', '$user_id')";
+//					- db -              -    tables  -                                   -   data  -
 
 //Check if valid statement.
 if (!mysqli_query($conn, $sql)) {
 	die($conn->error);
 }
+
+header('Location: index.php');
 
 mysqli_close($conn);
 ?>
