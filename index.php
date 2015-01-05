@@ -6,45 +6,38 @@
     <title>Isinfo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-            <![endif]-->
+    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <?php
+    include 'model.php';
 
-            <!-- Add your site or application content here -->
-            <p>Hello world! This is HTML5 Boilerplate.</p>
-            <?php
-            include 'model.php';
+    ?>
+    <table>
+      <tr>
+        <th>Plats</th>
+        <th>Betyg</th> 
+        <th>Kommentar</th>
+        <th>Användare</th>
+        <th>Datum</th>
+    </tr>
+    <?php
 
-            ?>
-            <table>
-              <tr>
-                <th>Plats</th>
-                <th>Betyg</th> 
-                <th>Kommentar</th>
-                <th>Användare</th>
-                <th>Datum</th>
-            </tr>
-            <?php
+    foreach ($posts as $post) {
+        echo "<tr>"
+        . "<td>".$post['location']."</td>"
+        . "<td>".$post['rating']."</td>"
+        . "<td>".$post['comment']."</td>"
+        . "<td>".$post['user_name']."</td>"
+        . "<td>".$post['date']."</td>"
+        . "</tr>";
+    }
 
-            foreach ($posts as $post) {
-                echo "<tr>"
-                . "<td>".$post['location']."</td>"
-                . "<td>".$post['rating']."</td>"
-                . "<td>".$post['comment']."</td>"
-                . "<td>".$post['user_name']."</td>"
-                . "<td>".$post['date']."</td>"
-                . "</tr>";
-            }
+// $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+// VALUES ('John', 'Doe', 'john@example.com')";
 
-
-            ?>
-            <!-- <tr>
-                <td>Eve</td>
-                <td>Jackson</td> 
-                <td>94</td>
-            </tr> -->
+    ?>
         </table>
 
 
