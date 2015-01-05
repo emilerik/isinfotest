@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $db = "isinfo";
 $host = "localhost";
 $user = "emil";
@@ -18,11 +18,11 @@ if ($conn->connect_error) {
 $location = $_POST['location'];
 $rating = $_POST['rating'];
 $comment = $_POST['comment'];
-$user_id = 1;
-// $user_id = $_SESSION['user_id'];
+//$user_id = '1';
+$user_id = (int)$_SESSION['user_id'];
 //$date = $_POST['date'];
 
-xdebug_var_dump($_SESSION);
+xdebug_var_dump($user_id);
 
 //Send data into db.
 //$sql = "INSERT INTO entries (location_id, rating, comment, 'date' ) VALUES ('$location', '$rating', '$comment', '$date')";

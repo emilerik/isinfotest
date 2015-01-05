@@ -7,11 +7,10 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+
   <script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.6.0/semantic.min.js" type="text/javascript"></script>
-  <script src="js/main.js" type="text/javascript"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.6.0/semantic.min.css">
-  <link rel="stylesheet" href="css/dropdown.css">
 
 </head>
 <body>
@@ -21,17 +20,17 @@
   include 'php-login-minimal/index.php';
   ?>
 
-<br>
+  <br>
 
-<div class="ui dropdown">
-  <input type="hidden" name="gender">
-  <i class="dropdown icon"></i>
-  <div class="default text">Gender</div>
-  <div class="menu">
-    <div class="item" data-value="male">Male</div>
-    <div class="item" data-value="female">Female</div>
+  <div class="ui selection dropdown">
+    <input type="hidden" name="gender">
+    <div class="default text">Gender</div>
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <div class="item" data-value="1">Male</div>
+      <div class="item" data-value="0">Female</div>
+    </div>
   </div>
-</div>
 
   <form method="get" action="php-login-minimal/index.php">
     <button type="submit">login page</button>
@@ -59,23 +58,23 @@
     }
     ?>
   </table>
-<?php
- // xdebug_var_dump($_SESSION);
-?>
+  <?php
+  //xdebug_var_dump($_SESSION);
+  ?>
   <?php if(isset($_SESSION['isloggedin'])) : ?>
 
   <!-- 'action="demo.php" means posts its data to the file named "demo.php".' -->
   <form action="entry_form.php" method="post" class="ui form" />
 
   <!-- Dropdown menu for PLATS -->
-  <p>Plats: <select name="location">
+  <p>Plats: <select name="location" class="ui dropdown">
     <option value="1">Drevviken</option>
     <option value="2">Norrviken</option>
   </select></p>
 
 
   <!-- Dropdown menu for BEDÖMNING -->
-  <p>Bedömning: <select name="rating">
+  <p>Bedömning: <select name="rating" class="ui dropdown">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -84,12 +83,12 @@
   </select></p>
 
   <!-- Textarea for KOMMENTAR -->
-  <p>Kommentar: <textarea rows="4" cols="50" name="comment">
+  <p>Kommentar: <textarea rows="4" cols="50" name="comment" class="field">
   </textarea></p>
 
   <!-- Dropdown menu for DATUM -->
   <?php
-// include 'jQuery UI.php';
+  //include 'jQuery UI.php';
   ?>
 
   <!-- Adds a submit button -->
@@ -105,6 +104,6 @@ if(isset($_POST['submit'])) {
 ?>
 
 <?php endif; ?>
-
+<script src="js/main.js" type="text/javascript"></script>
 </body>
 </html>
